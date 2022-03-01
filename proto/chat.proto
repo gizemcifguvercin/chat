@@ -1,0 +1,22 @@
+syntax = "proto3";
+package message;
+option go_package = "./proto";
+option java_multiple_files = true;
+
+service Chat {
+  rpc SayHello (ChatRequest) returns (ChatReply) {}
+  /*
+  rpc SayHello1 (stream ChatRequest) returns (ChatReply) {}
+  rpc SayHello2 (ChatRequest) returns (stream ChatReply) {}
+  rpc SayHello3 (stream ChatRequest) returns (stream ChatReply) {}
+  */
+}
+
+message ChatRequest {
+  string name = 1;
+  repeated string texts = 3;
+}
+
+message ChatReply {
+  string message = 1;
+}
