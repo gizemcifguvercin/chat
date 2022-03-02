@@ -1,7 +1,6 @@
 syntax = "proto3";
 package message;
 option go_package = "./proto";
-option java_multiple_files = true;
 
 service Chat {
   rpc SayHello (ChatRequest) returns (ChatReply) {}
@@ -14,7 +13,7 @@ service Chat {
 
 message ChatRequest {
   string name = 1;
-  repeated string texts = 3;
+  repeated string texts = 2;
 }
 
 message ChatReply {
